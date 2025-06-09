@@ -1,5 +1,11 @@
+import { LandingScreen } from "../components/landing-screen/landing-screen";
+
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <LandingScreen />
+    </div>
+  );
 };
 
 export default HomePage;
