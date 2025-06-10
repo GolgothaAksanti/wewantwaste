@@ -4,16 +4,16 @@ import "./index.css";
 import RoutesConfig from "./route.tsx";
 import { BrowserRouter } from "react-router-dom";
 import AppLayout from "./components/app-layout.tsx";
-import { AppProvider } from "./components/app-provider.tsx";
+import { StepperProvider } from "./context/stepper-context.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <AppProvider>
+    <StepperProvider>
       <BrowserRouter>
         <AppLayout>
           <RoutesConfig />
         </AppLayout>
       </BrowserRouter>
-    </AppProvider>
+    </StepperProvider>
   </StrictMode>
 );
