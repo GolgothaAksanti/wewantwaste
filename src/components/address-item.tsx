@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 
-import type { Address } from "@/types/app";
+import type { Address } from "@/types/types";
 
 type Props = {
   address: Address;
