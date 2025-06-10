@@ -107,6 +107,32 @@ UI implemented as per design specs. Each skip size card (e.g., 4 Yards, 6 Yards,
 
 The app also includes a multi-step flow (Postcode → Waste Type → Select Skip → Permit → Date → Payment), with step tracking handled via Context API and localStorage keys.
 
+## Responsiveness
+
+- the application is fully responsive, optimized for mobile, tablet, large and extra-large screen experiences.
+- Responsive utilities in TailwindCSS ensure flexible layouts and adaptive spacing
+
+## Skip Options, and Address API Integration
+
+- The skip options are dynamically populated using real-time data from the API provided,
+- For the Address API, I got the api by inspecting the provided website then integrated it to render the addresses.
+- where data was incomplete or unvailable, ** dummy data ** was used to fullfill the UI/UX and layout design requirements while maintaining functionality and flow integraty.
+
+## Requirements Coverage
+
+All functional UI/UX requirements have been addressed:
+
+- ✅ Fully functional ** multi-step ** booking process.
+- ✅ ** Mobile-first responsive ** design.
+- ✅ Use ** Addresses data ** from a public API endpoint.
+- ✅ Use ** real skip data ** from a public API endpoint.
+- ✅ Global state managed with ** Context API **.
+- ✅ Navigation using ** React Router ** with fallback for 404.
+- ✅ Clean and maintainable ** React + Typescript ** codebase.
+- ✅ UI consistency via ** TailwindCSS **.
+
+Where some API data was unvailable,dummy data was seamlessly integrated to ensure that the interface and experience remained complete.
+
 ## Preview
 
 [preview](https://wewantwaste-bice.vercel.app/)
