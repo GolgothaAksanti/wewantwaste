@@ -1,54 +1,112 @@
-# React + TypeScript + Vite
+# WE WANT WASTE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
+This project is a modern, responsive skip booking interface built with React, TypeScript, and TailwindCSS, bootstrapped with Vite and managed with pnpm. It includes routing, state management via Context API, and clean reusable UI components.
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Framework: [React](https://reactjs.org)
+- Language: [Typescript](https://typescriptlang.org)
+- Bundler: [Vite](https://vitejs.dev)
+- Package Manager: [pnpm](https://pnpm.io)
+- Styling: [TailwindCSS](https://tailwindcss.com)
+- Icons: [lucid-react](https://lucide.dev)
+- HTTP Client: [axios](https://axios-http.com)
+- Utility Classname Combiner: [clsx](https://github.com/lukeed/clsx)
+- Routing: [React Router](https://reactrouter.com)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Prerequisities
+
+- Node.js (>= 18)
+- pnpm (install with `npm install -g pnpm`)
+
+### Create Project
+
+```bash
+pnpm create vite
+# Framework: React
+# Variant: Typescript
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm install
 ```
+
+## Why use `pnpm`?
+
+### Benefits:
+
+- ** Faster Installs ** with a content-addressabe file system.
+- ** Efficient disk usage ** via hard links and caching.
+- ** Strict dependency resolution ** reducing bugs from flat `node_modules`.
+
+### Alternatives
+
+- `npm` - Default package manager, slower and less strict.
+- `yarn` - More stable than `npm`, but `pnpm` ins more space and speed-efficient.
+
+## Installed packages & their benefits
+
+| Package            | Purpose                                              |
+| ------------------ | ---------------------------------------------------- |
+| `axios`            | Promise-based HTTP client for API requests.          |
+| `lucid-react`      | beatiful, customizable React SVG icons.              |
+| `tailwindcss`      | Utility-first-CSS framework for fast styling.        |
+| `tailwindcss/vite` | Vite plugin to process Tailwind styles during build. |
+| `clsx`             | Simple utility to conditionally join classNames.     |
+| `react-router-dom` | Declarative routing for React web apps.              |
+
+## TalwindCSS Configuration
+
+#### Setup in `vite.config.ts`
+
+```ts
+import tailwindcss from "tailwindcss/vite";
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});
+```
+
+#### Import Tailwind in CSS
+
+```css
+@import "tailwindcss";
+```
+
+#### Routing Setup (with `react-router-dom`)
+
+Defined two routes:
+
+- `/` -> Homepage
+- `*` -> NotFoundPage for unmatched paths
+
+---
+
+### App Layout
+
+A global AppLayout component wraps all routed pages to ensure consistent layout and structure across the site.
+
+### State Management with Context API
+
+Used React's built-in Context API to manage and share global state.
+
+#### Benefits:
+
+- ** No extra dependacies **
+- ideal for lightweight ** global state **
+- simplifies ** state sharing ** across deeply nested components.
+
+## UI Implementation
+
+UI implemented as per design specs. Each skip size card (e.g., 4 Yards, 6 Yards, etc.) is responsive, reusable, and cleanly styled using TailwindCSS utilities.
+
+The app also includes a multi-step flow (Postcode → Waste Type → Select Skip → Permit → Date → Payment), with step tracking handled via Context API and localStorage keys.
+
+## Preview
+
+[preview](https://wewantwaste-bice.vercel.app/)
