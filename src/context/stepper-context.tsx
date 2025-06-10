@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { createContext, useState } from "react";
+
 import type { Address, Step, WasteType } from "@/types/types";
 import { steps } from "@/utils/data";
-import React, { createContext, useState } from "react";
 
 interface StepperContextProps {
   currentStep: Step;

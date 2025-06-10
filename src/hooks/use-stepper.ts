@@ -1,5 +1,6 @@
-import { StepperContext } from "@/context/stepper-context";
 import { useContext } from "react";
+
+import { StepperContext } from "@/context/stepper-context";
 
 export const useStepper = () => {
   const context = useContext(StepperContext);
