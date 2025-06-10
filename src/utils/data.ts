@@ -1,4 +1,3 @@
-import type { Step, WasteType } from "@/types/types";
 import {
   Hammer,
   Home,
@@ -11,6 +10,8 @@ import {
   CreditCard,
   Trash2,
 } from "lucide-react";
+
+import type { Step, WasteType } from "@/types/types";
 
 export const WASTE_TYPES: WasteType[] = [
   {

@@ -1,8 +1,8 @@
 import { ArrowRight, TriangleAlert } from "lucide-react";
+import clsx from "clsx";
 
 import type { SkipOptionType } from "@/types/types";
 import skipImage from "@/assets/image.png";
-import clsx from "clsx";
 
 type Props = {
   skip: SkipOptionType;
@@ -26,7 +26,7 @@ export const SkipCard = ({ skip, selected, onSelect }: Props) => {
     <div
       onClick={handleSelect}
       className={clsx(
-        "border rounded-lg bg-zinc-900s space-y-3  p-6",
+        "border rounded-lg bg-zinc-900 space-y-3 p-4 lg:p-6",
         selected?.id === skip.id ? `border-indigo-900` : `border-zinc-800`,
         !skip.allowed_on_road && !skip.allows_heavy_waste
           ? ` opacity-40 cursor-not-allowed `

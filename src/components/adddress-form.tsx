@@ -45,6 +45,7 @@ export const AddressForm = () => {
       </div>
       <button
         onClick={handleOnContinue}
+        type="submit"
         className="flex bg-indigo-600 cursor-pointer gap-4 items-center justify-center p-3 w-full rounded-lg"
       >
         Continue <ArrowRight />
